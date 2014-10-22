@@ -1,0 +1,4 @@
+fixtures:
+  symlinks:
+    mail_aliases: "#{source_dir}"
+    stdlib: "#{source_dir}/../stdlib"
