@@ -64,8 +64,8 @@ include mail_aliases
 ##Limitations
 
 This module is officially supported on :
-*Red Hat Enterprise Linux (RHEL) 5,6,7
-*CentOs 5,6,7
+* Red Hat Enterprise Linux (RHEL) 5,6,7
+* CentOs 5,6,7
 
 ##Development
 
