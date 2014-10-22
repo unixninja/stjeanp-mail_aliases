@@ -4,10 +4,10 @@
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with [Modulename]](#setup)
-    * [What [Modulename] affects](#what-[modulename]-affects)
+3. [Setup - The basics of getting started with mail_aliases](#setup)
+    * [What mail_aliases affects](#what-mail_aliases-affects)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with [Modulename]](#beginning-with-[Modulename])
+    * [Beginning with mail_aliases](#beginning-with-mail_aliases)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
@@ -23,7 +23,7 @@ The mail_aliases module manages mail aliases on the target systems using data st
 
 ##Setup
 
-###What [Modulename] affects
+###What mail_aliases affects
 
 * The aliases file on the target systems.
 
@@ -32,7 +32,7 @@ The mail_aliases module manages mail aliases on the target systems using data st
 * You must enable deep hash merges in your hiera configuration.
 * You must install the deep_merge gem for this module to function correctly.
 	
-###Beginning with [Modulename]	
+###Beginning with mail_aliases	
 
 Ensure that deep merges are enabled in hiera and that you've installed the deep_merge gem.
 
