@@ -1,11 +1,15 @@
 {
   "name": "stjeanp-mail_aliases",
-  "version": "0.1.0",
-  "author": "Patrick St. Jean - stjeanp@pat-st-jean.com",
-  "summary": "Manages email aliases on RedHat systems via hiera data",
-  "description": "This module manages email aliases in the /etc/aliases file using hiera data lookups. It requires deep hash merges to be enabled in your hiera configuration and the deep_merge gem must be installed.",
-  "license": "Apache",
-  "project_page": "Something at github",
+  "version": "0.1.1",
+  "author": "Patrick St. Jean",
+  "summary": "Manages email aliases on RedHat based systems via hiera data",
+  "license": "Apache License, Version 2.0",
+  "source": "git://github.com/stjeanp/stjeanp-mail_aliases",
+  "project_page": "https://github.com/stjeanp/stjeanp-mail_aliases",
+  "issues_url": "https://github.com/stjeanp/stjeanp-mail_aliases/issues",
+  "tags": [
+    "aliases"
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
@@ -38,8 +42,8 @@
         "6",
         "7"
       ]
-    },
-  ]
+    }
+  ],
   "requirements": [
     {
       "name": "pe",
@@ -51,6 +55,9 @@
     }
   ],
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 3.2.0 < 5.0.0"}
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
   ]
 }
