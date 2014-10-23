@@ -15,7 +15,7 @@
 
 ##Overview
 
-This module uses data stored in hiera to manage mail aliases on RedHat systems.
+This module uses data stored in hiera to manage mail aliases on RedHat (and derivative) systems.
 
 ##Module Description
 
@@ -66,7 +66,9 @@ include mail_aliases
 This module is officially supported on :
 * Red Hat Enterprise Linux (RHEL) 5,6,7
 * CentOs 5,6,7
+* Oracle Linux 5,6,7
+* Scientific Linux 5,6,7
 
 ##Development
 
-Updates and tweaks are welcome.
+Updates and tweaks are welcome. Once I get some Debian and Ubuntu VMs spun up, I'll update and test for those OSs as well.
