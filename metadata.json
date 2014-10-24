@@ -2,7 +2,7 @@
   "name": "stjeanp-mail_aliases",
   "version": "0.2.0",
   "author": "Patrick St. Jean",
-  "summary": "Manages email aliases on RedHat based systems via hiera data",
+  "summary": "Manages email aliases on Linux based systems via hiera data",
   "license": "Apache License, Version 2.0",
   "source": "git://github.com/stjeanp/stjeanp-mail_aliases",
   "project_page": "https://github.com/stjeanp/stjeanp-mail_aliases",
