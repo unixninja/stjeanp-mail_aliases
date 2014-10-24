@@ -15,7 +15,7 @@
 
 ##Overview
 
-This module uses data stored in hiera to manage mail aliases on RedHat (and derivative) systems.
+This module uses data stored in hiera to manage mail aliases on Linux systems. Currently it works on any OS that sets $::osfamily to RedHat, Debian, or Suse.
 
 ##Module Description
 
@@ -27,7 +27,7 @@ The mail_aliases module manages mail aliases on the target systems using data st
 
 * The aliases file on the target systems.
 
-###Setup Requirements **OPTIONAL**
+###Setup Requirements **REQUIRED**
 
 * You must enable deep hash merges in your hiera configuration.
 * You must install the deep_merge gem for this module to function correctly.
@@ -63,12 +63,22 @@ include mail_aliases
 
 ##Limitations
 
-This module is officially supported on :
+This module has been tested on :
+* Red Hat Enterprise Linux (RHEL) 6.5
+* CentOs 6.5
+* Debian 7.7.0
+* OpenSUSE 13.1
+* Ubuntu Server 14.04
+
+It should work on :
 * Red Hat Enterprise Linux (RHEL) 5,6,7
 * CentOs 5,6,7
 * Oracle Linux 5,6,7
 * Scientific Linux 5,6,7
+* Debian 6,7
+* OpenSuSE 13
+* Ubuntu 14
 
 ##Development
 
-Updates and tweaks are welcome. Once I get some Debian and Ubuntu VMs spun up, I'll update and test for those OSs as well.
+Updates and tweaks are welcome.

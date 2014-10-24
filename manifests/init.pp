@@ -34,9 +34,16 @@
 # been a change
 
 class mail_aliases {
-  # Right now only OSs in the RedHat family are supported.
   case $::osfamily {
     'RedHat': {
+      $aliases_file = '/etc/aliases'
+      $newaliases = '/usr/bin/newaliases'
+    }
+    'Debian': {
+      $aliases_file = '/etc/aliases'
+      $newaliases = '/usr/bin/newaliases'
+    }
+    'Suse': {
       $aliases_file = '/etc/aliases'
       $newaliases = '/usr/bin/newaliases'
     }
