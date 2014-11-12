@@ -2,6 +2,6 @@
 :backends:
   - yaml
 :hierarchy:
-  - test
+  - "%{::testname}"
 :yaml:
   :datadir: 'spec/fixtures/hiera'

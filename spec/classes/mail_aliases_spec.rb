@@ -13,27 +13,31 @@ describe 'mail_aliases', :type => :class do
   end
 
   context 'RedHat OS and no hiera data' do
-    let(:facts) { {:osfamily => 'RedHat'} }
+    let(:facts) { {:osfamily => 'RedHat', :testname => 'no_hiera_data'} }
 
     it { should compile }
+    it { should have_mailalias_resource_count(0) }
   end
 
   context 'Debian OS and no hiera data' do
-    let(:facts) { {:osfamily => 'Debian'} }
+    let(:facts) { {:osfamily => 'Debian', :testname => 'no_hiera_data'} }
 
     it { should compile }
+    it { should have_mailalias_resource_count(0) }
   end
 
   context 'Suse OS and no hiera data' do
-    let(:facts) { {:osfamily => 'Suse'} }
+    let(:facts) { {:osfamily => 'Suse', :testname => 'no_hiera_data'} }
 
     it { should compile }
+    it { should have_mailalias_resource_count(0) }
   end
 
   context 'RedHat OS and hiera data' do
-    let(:facts) { {:osfamily => 'RedHat'} }
+    let(:facts) { {:osfamily => 'RedHat', :testname => 'with_hiera_data'} }
 
     it { should compile }
+    it { should have_mailalias_resource_count(3) }
     it { should contain_mailalias('root').with(
       'recipient' => 'admin@mailbox.com',
       'notify'    => 'Exec[newaliases]',
@@ -52,9 +56,10 @@ describe 'mail_aliases', :type => :class do
   end
 
   context 'Debian OS and hiera data' do
-    let(:facts) { {:osfamily => 'Debian'} }
+    let(:facts) { {:osfamily => 'Debian', :testname => 'with_hiera_data'} }
 
     it { should compile }
+    it { should have_mailalias_resource_count(3) }
     it { should contain_mailalias('root').with(
       'recipient' => 'admin@mailbox.com',
       'notify'    => 'Exec[newaliases]',
@@ -73,9 +78,10 @@ describe 'mail_aliases', :type => :class do
   end
 
   context 'Suse OS and hiera data' do
-    let(:facts) { {:osfamily => 'Suse'} }
+    let(:facts) { {:osfamily => 'Suse', :testname => 'with_hiera_data'} }
 
     it { should compile }
+    it { should have_mailalias_resource_count(3) }
     it { should contain_mailalias('root').with(
       'recipient' => 'admin@mailbox.com',
       'notify'    => 'Exec[newaliases]',
