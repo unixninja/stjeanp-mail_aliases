@@ -2,6 +2,11 @@ require 'rspec-puppet'
 require 'spec_helper'
 
 describe 'mail_aliases', :type => :class do
+  after :each do
+    Facter.clear
+    Facter.clear_messages
+  end
+
   context 'Unsupported OS' do
     let(:facts) { {:osfamily => 'Solaris'} }
 
