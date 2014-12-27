@@ -1,4 +1,3 @@
-require 'rspec-puppet'
 require 'spec_helper'
 
 describe 'mail_aliases', :type => :class do
@@ -8,7 +7,11 @@ describe 'mail_aliases', :type => :class do
   end
 
   context 'Unsupported OS' do
-    let(:facts) { {:osfamily => 'Solaris'} }
+    let :facts do
+      {
+        :osfamily => 'Solaris',
+      }
+    end
 
     it do
       expect {
@@ -18,28 +21,48 @@ describe 'mail_aliases', :type => :class do
   end
 
   context 'RedHat OS and no hiera data' do
-    let(:facts) { {:osfamily => 'RedHat', :testname => 'no_hiera_data'} }
+    let :facts do
+      {
+        :osfamily => 'RedHat',
+        :testname => 'no_hiera_data'
+      }
+    end
 
     it { should compile }
     it { should have_mailalias_resource_count(0) }
   end
 
   context 'Debian OS and no hiera data' do
-    let(:facts) { {:osfamily => 'Debian', :testname => 'no_hiera_data'} }
+    let :facts do
+      {
+        :osfamily => 'Debian',
+        :testname => 'no_hiera_data'
+      }
+    end
 
     it { should compile }
     it { should have_mailalias_resource_count(0) }
   end
 
   context 'Suse OS and no hiera data' do
-    let(:facts) { {:osfamily => 'Suse', :testname => 'no_hiera_data'} }
+    let :facts do
+      {
+        :osfamily => 'Suse',
+        :testname => 'no_hiera_data'
+      }
+    end
 
     it { should compile }
     it { should have_mailalias_resource_count(0) }
   end
 
   context 'RedHat OS and hiera data' do
-    let(:facts) { {:osfamily => 'RedHat', :testname => 'with_hiera_data'} }
+    let :facts do
+      {
+        :osfamily => 'RedHat',
+        :testname => 'with_hiera_data'
+      }
+    end
 
     it { should compile }
     it { should have_mailalias_resource_count(3) }
@@ -61,7 +84,12 @@ describe 'mail_aliases', :type => :class do
   end
 
   context 'Debian OS and hiera data' do
-    let(:facts) { {:osfamily => 'Debian', :testname => 'with_hiera_data'} }
+    let :facts do
+      {
+        :osfamily => 'Debian',
+        :testname => 'with_hiera_data'
+      }
+    end
 
     it { should compile }
     it { should have_mailalias_resource_count(3) }
@@ -83,7 +111,12 @@ describe 'mail_aliases', :type => :class do
   end
 
   context 'Suse OS and hiera data' do
-    let(:facts) { {:osfamily => 'Suse', :testname => 'with_hiera_data'} }
+    let :facts do
+      {
+        :osfamily => 'Suse',
+        :testname => 'with_hiera_data'
+      }
+    end
 
     it { should compile }
     it { should have_mailalias_resource_count(3) }
