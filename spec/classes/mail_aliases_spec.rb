@@ -16,7 +16,7 @@ describe 'mail_aliases', :type => :class do
     it do
       expect {
         should compile
-      }.to raise_error(Puppet::Error, /OS family 'Solaris' is not supported by this module/)
+      }.to raise_error(RSpec::Expectations::ExpectationNotMetError, /OS family 'Solaris' is not supported by this module/)
     end
   end
 
