@@ -1,6 +1,6 @@
 {
   "name": "stjeanp-mail_aliases",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "Patrick St. Jean",
   "summary": "Manages email aliases on Linux based systems via hiera data",
   "license": "Apache-2.0",
