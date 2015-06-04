@@ -29,6 +29,7 @@ describe 'mail_aliases', :type => :class do
     end
 
     it { should compile }
+    it { should contain_class('mail_aliases') }
     it { should have_mailalias_resource_count(0) }
   end
 
@@ -41,6 +42,7 @@ describe 'mail_aliases', :type => :class do
     end
 
     it { should compile }
+    it { should contain_class('mail_aliases') }
     it { should have_mailalias_resource_count(0) }
   end
 
@@ -53,6 +55,7 @@ describe 'mail_aliases', :type => :class do
     end
 
     it { should compile }
+    it { should contain_class('mail_aliases') }
     it { should have_mailalias_resource_count(0) }
   end
 
@@ -65,7 +68,12 @@ describe 'mail_aliases', :type => :class do
     end
 
     it { should compile }
+    it { should contain_class('mail_aliases') }
     it { should have_mailalias_resource_count(3) }
+    it { should contain_exec('newaliases').with(
+      'command'     => '/usr/bin/newaliases',
+      'refreshonly' => true,
+    ) }
     it { should contain_mailalias('root').with(
       'recipient' => 'admin@mailbox.com',
       'notify'    => 'Exec[newaliases]',
@@ -92,7 +100,12 @@ describe 'mail_aliases', :type => :class do
     end
 
     it { should compile }
+    it { should contain_class('mail_aliases') }
     it { should have_mailalias_resource_count(3) }
+    it { should contain_exec('newaliases').with(
+      'command'     => '/usr/bin/newaliases',
+      'refreshonly' => true,
+    ) }
     it { should contain_mailalias('root').with(
       'recipient' => 'admin@mailbox.com',
       'notify'    => 'Exec[newaliases]',
@@ -119,7 +132,12 @@ describe 'mail_aliases', :type => :class do
     end
 
     it { should compile }
+    it { should contain_class('mail_aliases') }
     it { should have_mailalias_resource_count(3) }
+    it { should contain_exec('newaliases').with(
+      'command'     => '/usr/bin/newaliases',
+      'refreshonly' => true,
+    ) }
     it { should contain_mailalias('root').with(
       'recipient' => 'admin@mailbox.com',
       'notify'    => 'Exec[newaliases]',
@@ -136,4 +154,6 @@ describe 'mail_aliases', :type => :class do
       'ensure'    => 'absent',
     ) }
   end
+
+  at_exit { RSpec::Puppet::Coverage.report! }
 end
