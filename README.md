@@ -1,4 +1,4 @@
-#mail_aliases
+#mail_aliases [![Build Status](https://travis-ci.org/stjeanp/stjeanp-mail_aliases.svg?branch=master)](https://travis-ci.org/stjeanp/stjeanp-mail_aliases)
 
 ####Table of Contents
 
