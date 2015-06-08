@@ -33,7 +33,7 @@
 # Create mail aliases based on hiera data and run newaliases if there's
 # been a change
 
-class mail_aliases {
+class mail_aliases ( $default_aliases = false ) {
   case $::osfamily {
     'RedHat': {
       $aliases_file = '/etc/aliases'
@@ -65,14 +65,30 @@ class mail_aliases {
   # Do a deep merge of all matching 'mail_aliases' data from hiera
   $alias_hash = hiera_hash('mail_aliases', $not_found)
 
-  if has_key($alias_hash, 'not found') {
-    # If we didn't have any matches, print out an informational
-    info('No aliases found.')
-  }else{
+  # Allow someone to pass defaults as parameters when using roles and profiles
+  if $default_aliases {
+    if has_key($alias_hash, 'not found') {
+      $merged_hash = $default_aliases
+    } else {
+      $merged_hash = merge($default_aliases, $alias_hash)
+    }
+
     # Otherwise, process the resources...
     $defaults = {
       'ensure' => 'present',
     }
-    create_resources(mailalias, $alias_hash, $defaults)
+    create_resources(mailalias, $merged_hash, $defaults)
+  }
+  else {
+    if has_key($alias_hash, 'not found') {
+      # If we didn't have any matches, print out an informational
+      info('No aliases found.')
+    } else {
+      # Otherwise, process the resources...
+      $defaults = {
+        'ensure' => 'present',
+      }
+      create_resources(mailalias, $alias_hash, $defaults)
+    }
   }
 }
